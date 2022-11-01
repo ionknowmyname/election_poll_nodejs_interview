@@ -1,0 +1,24 @@
+<header class="jumbotron">
+    <h1 class="mt-4">Polling Results for LGA</h1>
+</header>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Party</th>
+            <th>Number of Votes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (list.length > 0){ %> <% list.forEach(function(row){ %>
+        <tr>
+            <td><%= row.party_abbreviation %></td>
+            <td><%= row.votes %></td>
+        </tr>
+        <% }) %> <% }else{ %>
+        <tr>
+            <td colspan="3">No Record Found</td>
+        </tr>
+        <% } %>
+    </tbody>
+</table>

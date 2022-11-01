@@ -1,0 +1,42 @@
+<header class="jumbotron">
+    <h1 class="mt-4">Polling Locations</h1>
+</header>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Unique ID</th>
+            <th>Polling Unit ID</th>
+            <th>Ward ID</th>
+            <th>LGA ID</th>
+            <th>Unique Ward ID</th>
+            <th>Polling Unit No.</th>
+            <th>Polling Unit Name</th>
+            <th>Polling Unit Description</th>
+            <th>Entered by User</th>
+            <th>Date Entered</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (list.length > 0){ %> <% list.forEach(function(row){ %>
+        <tr>
+            <td><%= row.uniqueid %></td>
+            <td><%= row.polling_unit_id %></td>
+            <td><%= row.ward_id %></td>
+            <td><%= row.lga_id %></td>
+            <td><%= row.uniquewardid %></td>
+            <td><%= row.polling_unit_number %></td>
+            <td><%= row.polling_unit_name %></td>
+            <td><%= row.polling_unit_description %></td>
+            <td><%= row.entered_by_user %></td>
+            <td><%= row.date_entered %></td>
+        </tr>
+        <% }) %> <% }else{ %>
+        <tr>
+            <td colspan="3">No Record Found</td>
+        </tr>
+        <% } %>
+    </tbody>
+</table>
+
+<!-- <a href="/dashboard" class="btn btn-secondary">Go Back</a> -->

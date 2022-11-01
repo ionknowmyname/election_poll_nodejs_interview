@@ -1,0 +1,21 @@
+<header class="jumbotron">
+    <h1 class="mt-4">Request Polling Results for LGA</h1>
+</header>
+
+<form action="/polls/get-result" method="POST">
+    <div class="form-group">
+        <label for="lga">Choose LGA:</label>
+        <select name="lga" id="lga">
+            <% let options = [ "Select Lga", "35" ]; %> <% for(let i = 0; i <
+            options.length; i++) { %> <% if(options[i] == "Select Lga"){ %>
+            <option value="" disabled selected hidden>Select Lga</option>
+            <% } %>
+
+            <option value="<%= options[i] %>"><%= options[i] %></option>
+            <% } %>
+        </select>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">SUBMIT</button>
+</form>

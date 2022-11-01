@@ -1,0 +1,34 @@
+<header class="jumbotron">
+    <h1 class="mt-4">
+        Polling Results for Polling Unit <%= list[0].polling_unit_uniqueid %>
+    </h1>
+</header>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Result ID</th>
+            <th>Polling Unit ID</th>
+            <th>Party Abbreviation</th>
+            <th>Party Score</th>
+            <th>Entered by User</th>
+            <th>Date Entered</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (list.length > 0){ %> <% list.forEach(function(row){ %>
+        <tr>
+            <td><%= row.result_id %></td>
+            <td><%= row.polling_unit_uniqueid %></td>
+            <td><%= row.party_abbreviation %></td>
+            <td><%= row.party_score %></td>
+            <td><%= row.entered_by_user %></td>
+            <td><%= row.date_entered %></td>
+        </tr>
+        <% }) %> <% }else{ %>
+        <tr>
+            <td colspan="3">No Record Found</td>
+        </tr>
+        <% } %>
+    </tbody>
+</table>
